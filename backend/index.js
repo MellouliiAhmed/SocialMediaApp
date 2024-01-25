@@ -6,6 +6,7 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const routerUser =  require("./routes/users");
 const routerAuth =  require("./routes/auth");
+const routerPost =  require("./routes/posts");
 
 dotenv.config();
 // mongoose.connect(process.env.MONGO_URL).then(()=>console.log("connected to db")).catch(
@@ -22,6 +23,7 @@ app.use(helmet());
 app.use(morgan("common"));
 app.use("/api/users",routerUser);
 app.use("/api/auth",routerAuth);
+app.use("/api/posts",routerPost);
 
 
 
